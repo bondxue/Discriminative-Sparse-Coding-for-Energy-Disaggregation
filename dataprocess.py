@@ -76,3 +76,22 @@ def split(d,portion,timeframe):
         x_test[key] = d[key].loc[test_list,:]
 
     return x_train,x_test
+
+def split2(d,portion,timeduration, start_t):
+    '''
+    Parameters: d = dictionary, portion 0.5 - 0.9, timeduration 1-8760, start_t 1-8760
+
+    Return: x_train,x_test dictionarys containing dataframes of all the appliances within the timeframe.
+    '''
+    x_train = {}
+    x_test = {}
+    
+    train_list  = range(int(timeduration * 0.0 + start_t),int(timeduration * portion +start_t))
+    print(train_list)
+    test_list = range(int(timeduration * portion)+start_t,int(timeduration * 1.0)+start_t)
+    print(test_list)
+    for key in d.keys():
+        x_train[key] = d[key].loc[train_list,:]
+        x_test[key] = d[key].loc[test_list,:]
+
+    return x_train,x_test
