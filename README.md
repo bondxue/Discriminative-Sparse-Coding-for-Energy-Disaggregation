@@ -1,4 +1,4 @@
 # Discriminative-Sparse-Coding-for-Energy-Disaggregation
 
 
-Risk-Econ Lab Project (updating...)
+Risk-Econ Lab Project (updating)
