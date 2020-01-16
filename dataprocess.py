@@ -15,7 +15,7 @@ def read_data():
     path = "datasets/*.csv"
     for fname in glob.glob(path):
         house_df = pd.read_csv(fname)
-        houseID = int(fname.split('.')[0].split('\\')[1])
+        houseID = int(fname.split('.')[0].split('/')[1])
         
         house_df['DateTime'] = pd.to_datetime(house_df['DateTime'])
         mask = (house_df['DateTime'] >= '2014-1-1') & (house_df['DateTime'] < '2015-1-1')
